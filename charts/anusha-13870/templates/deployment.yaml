@@ -5,6 +5,8 @@ kind: Deployment
 metadata:
   name: {{ template "fullname" . }}
   labels:
+    mcmp/appname: app
+    mcmp/compname: Anusha
     draft: {{ default "draft-app" .Values.draft }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 spec:
@@ -12,6 +14,8 @@ spec:
   template:
     metadata:
       labels:
+        mcmp/appname: app
+        mcmp/compname: Anusha
         draft: {{ default "draft-app" .Values.draft }}
         app: {{ template "fullname" . }}
 {{- if .Values.podAnnotations }}

@@ -9,6 +9,8 @@ metadata:
   name: {{ template "fullname" . }}
 {{- end }}
   labels:
+    mcmp/appname: app
+    mcmp/compname: Anusha
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 {{- if .Values.service.annotations }}
   annotations:
